@@ -1,0 +1,1 @@
+var o={503:o=>{o.exports={greetCommonJS:function(o){return"Hello from CommonJS, ".concat(o,"!")}}}},r={},e=function e(n){var t=r[n];if(void 0!==t)return t.exports;var l=r[n]={exports:{}};return o[n](l,l.exports,e),l.exports}(503).greetCommonJS;console.log("Hello from ES Module, World!"),console.log(e("World"));
