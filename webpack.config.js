@@ -27,6 +27,15 @@ module.exports = [
             extensions: [".js", ".mjs"],
         },
         target: "node",
+        plugins: [
+            codecovWebpackPlugin({
+                enableBundleAnalysis: true,
+                bundleName: "test-commonjs",
+                uploadToken: process.env.WEBPACK_UPLOAD_TOKEN,
+                apiUrl: process.env.WEBPACK_API_URL,
+                debug: true,
+            }),
+        ],
     },
     {
         // Configuration for ES Module
@@ -57,6 +66,15 @@ module.exports = [
             extensions: [".js", ".mjs"],
         },
         target: "web",
+        plugins: [
+            codecovWebpackPlugin({
+                enableBundleAnalysis: true,
+                bundleName: "test-esm",
+                uploadToken: process.env.WEBPACK_UPLOAD_TOKEN,
+                apiUrl: process.env.WEBPACK_API_URL,
+                debug: true,
+            }),
+        ],
     },
     {
         // Configuration for standard JavaScript
@@ -83,5 +101,14 @@ module.exports = [
             extensions: [".js", ".mjs"],
         },
         target: "web",
+        plugins: [
+            codecovWebpackPlugin({
+                enableBundleAnalysis: true,
+                bundleName: "test-standard-js",
+                uploadToken: process.env.WEBPACK_UPLOAD_TOKEN,
+                apiUrl: process.env.WEBPACK_API_URL,
+                debug: true,
+            }),
+        ],
     },
 ];
